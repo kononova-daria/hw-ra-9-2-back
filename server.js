@@ -22,7 +22,7 @@ router.post('/posts', async(ctx, next) => {
     const {id, content} = ctx.request.body;
 
     if (id !== 0) {
-        posts = posts.map(o => o.id !== id ? o : {...o, content: content});
+        posts = posts.map(o => o.id !== id ? o : {...o, text: text});
         ctx.response.status = 204;
         return;
     }
